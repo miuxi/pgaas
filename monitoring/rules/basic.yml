@@ -1,0 +1,11 @@
+groups:
+  - name: basic
+    rules:
+      - alert: HostHighCPU
+        expr: (100 - avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 90
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU on {{ $labels.instance }}"
+          description: "CPU > 90% for 10 minutes."

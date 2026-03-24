@@ -1,0 +1,18 @@
+.env
+.env.*
+!.env.example
+
+*.log
+
+# local/editor
+.vscode/
+.idea/
+
+# runtime or local data if you later add bind mounts
+.secrets/
+secrets/
+
+
+monitoring/prometheus/targets/node-exporter.yml
+monitoring/alertmanager/alertmanager.yml
+monitoring/prometheus/prometheus.yml
